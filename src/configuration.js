@@ -1,3 +1,4 @@
 module.exports = {
-    'databaseURL': 'mongodb://localhost:27017/gohdan'
+    'databaseURL': 'mongodb://localhost:27017/gohdan',
+    'adminPassword': 'batmanisgreat'
 };

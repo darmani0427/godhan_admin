@@ -1,4 +1,5 @@
 var Account = require('./account.js')
+var configuration = require('./configuration.js')
 
 module.exports = function (app) {
     app.get('/', function(req, res) {
@@ -6,7 +7,12 @@ module.exports = function (app) {
     })
 
     app.post('/login', function(req, res) {
-        res.redirect('/accounts')
+        console.log(req.body.password)
+        if (req.body.password == configuration.adminPassword) {
+            res.redirect('/accounts')
+        } else {
+            res.send("Error!")
+        }
     })
 
     app.get('/accounts', function (req, res) {
