@@ -1,0 +1,36 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+
+<head>
+    <title>Admin Console - Accounts - Gohdan</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1><span></span>Accounts</h1>
+        </div>
+
+        <div class="row">
+
+            <table>
+                <tr>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Credit Card</th>
+                </tr>
+
+                <% for (var i = 0; i < accounts.length; i++) { %>
+                    <tr>
+                        <td><%= accounts[i].first_name %></td>
+                        <td><%= accounts[i].last_name %></td>
+                        <td>XXXX-XXXX-XXXX-<%= accounts[i].credit_card.slice(-4) %></td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
