@@ -2,16 +2,22 @@
 <html>
 
 <head>
-    <title>Gohdan App</title>
+    <title>Gohdan</title>
 </head>
 
 <body>
     <div class="container">
         <div>
-            <h1>
-                <span></span> Welcome to Gohdan
-            </h1>
+            <h1><span></span> Welcome to Gohdan Administrative Console</h1>
         </div>
+
+        <form action="/login" method="post">
+            <div>
+                <label>Password</label>
+                <input type="password" name="password">
+            </div>
+            <button type="submit">Login</button>
+        </form>
     </div>
 </body>
 
