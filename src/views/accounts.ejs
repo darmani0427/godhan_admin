@@ -9,7 +9,10 @@
 <body>
     <div class="container">
         <div>
-            <h1><span></span>Accounts</h1>
+            <h1><span></span>Admin Console</h1>
+        </div>
+        <div>
+            <h2><span></span>Accounts</h2>
         </div>
 
         <div class="row">
@@ -18,14 +21,20 @@
                 <tr>
                     <th>First</th>
                     <th>Last</th>
+                    <th>Phone</th>
+                    <th>Email</th>
                     <th>Credit Card</th>
+                    <th>Expiry Date</th>
                 </tr>
 
                 <% for (var i = 0; i < accounts.length; i++) { %>
                     <tr>
                         <td><%= accounts[i].first_name %></td>
                         <td><%= accounts[i].last_name %></td>
+                        <td><%= accounts[i].phone %></td>
+                        <td><%= accounts[i].email %></td>
                         <td>XXXX-XXXX-XXXX-<%= accounts[i].credit_card.slice(-4) %></td>
+                        <td><%= accounts[i].expiry_date %></td>
                     </tr>
                 <% } %>
             </table>

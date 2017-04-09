@@ -3,9 +3,10 @@ var mongoose = require('mongoose')
 var accountSchema = mongoose.Schema({
     first_name: String,
     last_name: String,
-    credit_card: String
+    phone: String,
+    email: String,
+    credit_card: String,
+    expiry_date: String
 }, { collection: 'account' })
 
-var Account = mongoose.model('Account', accountSchema)
-
-module.exports = Account
+module.exports = mongoose.model('Account', accountSchema)
