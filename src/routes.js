@@ -1,4 +1,5 @@
 var Account = require('./account.js')
+var User = require('./user.js')
 var configuration = require('./configuration.js')
 
 module.exports = function (app) {
@@ -7,12 +8,16 @@ module.exports = function (app) {
     })
 
     app.post('/login', function(req, res) {
-        console.log(req.body.password)
-        if (req.body.password == configuration.adminPassword) {
-            res.redirect('/accounts')
-        } else {
-            res.send("Error!")
-        }
+        User.findOne({ 'username': req.body.username }, 'username password', function (error, user) {
+            if(error || !user) {
+                console.log("im in here")
+                res.send("Error!")
+            } else if (req.body.password == user.password) {
+                res.redirect('/accounts')
+            } else {
+                res.send("Error!")
+            }
+        });
     })
 
     app.get('/accounts', function (req, res) {
