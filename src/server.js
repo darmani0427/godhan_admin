@@ -5,7 +5,11 @@ var app = express()
 
 var configuration = require('./configuration.js')
 
-mongoose.connect(configuration.databaseURL)
+var options = {
+  user: configuration.databaseUser,
+  pass: configuration.databasePassword
+}
+mongoose.connect(configuration.databaseURL, options)
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
