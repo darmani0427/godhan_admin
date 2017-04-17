@@ -20,6 +20,12 @@
                 <label>Password</label>
                 <input type="password" name="password">
             </div>
+
+            <% if (error) { %>
+                <div style="color:#cc0000">
+                    <%= error %>
+                </div>
+            <% } %>
             <button type="submit">Login</button>
         </form>
     </div>
