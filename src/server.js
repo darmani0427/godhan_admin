@@ -5,9 +5,10 @@ var app = express()
 
 var configuration = require('./configuration.js')
 
+var databasePassword = new Buffer(configuration.databasePassword, 'base64').toString()
 var options = {
   user: configuration.databaseUser,
-  pass: configuration.databasePassword
+  pass: databasePassword
 }
 mongoose.connect(configuration.databaseURL, options)
 
